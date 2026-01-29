@@ -33,7 +33,10 @@ jobs:
       - name: Build
         env:
           HUGO_ENV: production
-        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: |
+          BASE_URL="${{ steps.pages.outputs.base_url }}"
+          BASE_URL="${BASE_URL/http:\/\//https:\/\/}"
+          hugo --minify --baseURL "${BASE_URL}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
