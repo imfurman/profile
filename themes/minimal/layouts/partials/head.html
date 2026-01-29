@@ -1,0 +1,49 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{ $title := .Site.Title }}
+{{ if and (not .IsHome) .Title }}
+  {{ $title = printf "%s | %s" .Title .Site.Title }}
+{{ end }}
+
+{{ $description := .Params.description | default .Site.Params.description }}
+{{ $keywords := .Site.Params.keywords | default (slice) }}
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="author" content="{{ .Site.Params.author }}">
+{{ if gt (len $keywords) 0 }}
+<meta name="keywords" content="{{ delimit $keywords ", " }}">
+{{ end }}
+<meta name="robots" content="index,follow">
+
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+{{ if .Site.Params.locale }}
+<meta property="og:locale" content="{{ .Site.Params.locale }}">
+{{ end }}
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+{{ if .Site.Params.twitter }}
+<meta name="twitter:creator" content="@{{ .Site.Params.twitter }}">
+{{ end }}
+
+{{ partial "jsonld.html" . }}
+
+{{ if and (hugo.IsProduction) (ne .Site.Params.ga_id "") }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.ga_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ .Site.Params.ga_id }}');
+</script>
+{{ end }}

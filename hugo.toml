@@ -1,0 +1,27 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Ruslan Shchur — Full-Stack Web Developer"
+theme = "minimal"
+
+enableRobotsTXT = true
+canonifyURLs = true
+disableKinds = ["taxonomy", "term", "RSS", "section"]
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[params]
+  description = "Portfolio of Ruslan Shchur (imfurman), a full-stack web developer and product engineer building modern web and mobile applications."
+  author = "Ruslan Shchur"
+  keywords = ["web developer", "software engineer", "full-stack", "product engineer", "SaaS", "Flutter"]
+  locale = "en_US"
+  twitter = "imfurman"
+  ga_id = ""
+
+[outputs]
+  home = ["HTML", "SITEMAP"]
+
+[permalinks]
+  pages = "/:slug/"

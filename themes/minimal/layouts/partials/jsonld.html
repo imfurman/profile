@@ -1,0 +1,32 @@
+{{ $name := .Site.Params.author }}
+{{ $nickname := "" }}
+{{ $jobTitle := "" }}
+{{ $location := "" }}
+{{ with .Params.hero }}
+  {{ $name = .name }}
+  {{ $nickname = .nickname }}
+  {{ $jobTitle = .title }}
+  {{ $location = .location }}
+{{ end }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ $name }}",
+  {{ if $nickname }}"alternateName": "{{ $nickname }}",{{ end }}
+  "url": "{{ .Site.BaseURL }}",
+  {{ if $jobTitle }}"jobTitle": "{{ $jobTitle }}",{{ end }}
+  "description": "{{ .Site.Params.description }}",
+  {{ if $location }}"homeLocation": {"@type": "Place", "name": "{{ $location }}"},{{ end }}
+  "sameAs": [
+    "https://github.com/imfurman",
+    "https://x.com/imfurman"
+  ],
+  "knowsAbout": [
+    "web development",
+    "software engineering",
+    "SaaS",
+    "Flutter"
+  ]
+}
+</script>

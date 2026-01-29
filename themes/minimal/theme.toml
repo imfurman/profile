@@ -1,0 +1,9 @@
+name = "Minimal"
+license = "MIT"
+licenselink = ""
+description = "Minimal custom theme for a single-page portfolio."
+homepage = ""
+
+[author]
+  name = "Ruslan Shchur"
+  homepage = ""
