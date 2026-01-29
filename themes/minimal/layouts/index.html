@@ -21,6 +21,29 @@
       <h1 class="hero-title">{{ $hero.name }}</h1>
       <p class="hero-role">{{ $hero.title }}</p>
       <p class="hero-focus">{{ $hero.focus }}</p>
+      {{ with $hero.cli }}
+        <div class="terminal" role="img" aria-label="Command line preview">
+          <div class="terminal-bar" aria-hidden="true">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-title">session</span>
+          </div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">{{ .prompt }}</span>
+            <span class="terminal-path">{{ .path }}</span>
+            <span class="terminal-caret">$</span>
+            <span class="terminal-command" style="--cmd-ch: {{ len .command }}ch;">{{ .command }}</span>
+          </div>
+          {{ if .output }}
+            <ul class="terminal-output">
+              {{ range .output }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </div>
+      {{ end }}
       <div class="cta">
         <a class="button" href="#projects">{{ $hero.cta_primary }}</a>
         <a class="button ghost" href="#contact">{{ $hero.cta_secondary }}</a>
@@ -43,22 +66,26 @@
     <div class="container">
       <h2>Projects</h2>
       {{ range .Params.projects }}
-        <article class="card">
-          <div class="card-header">
+        <article class="project">
+          <div class="project-head">
             <div>
-              <h3>{{ .name }}</h3>
-              <p class="meta">{{ .type }}</p>
+              <p class="project-type">{{ .type }}</p>
+              <h3 class="project-title">{{ .name }}</h3>
             </div>
-            <a class="text-link" href="{{ .url }}" rel="noopener">{{ .url }}</a>
+            <a class="project-link" href="{{ .url }}" rel="noopener">Visit →</a>
           </div>
-          <p>{{ .description }}</p>
-          <p>{{ .why }}</p>
-          <ul>
-            {{ range .bullets }}
-              <li>{{ . }}</li>
-            {{ end }}
-          </ul>
-          <p class="role"><span>Role:</span> {{ .role }}</p>
+          <div class="project-body">
+            <div class="project-copy">
+              <p>{{ .description }}</p>
+              <p>{{ .why }}</p>
+            </div>
+            <ul class="project-points">
+              {{ range .bullets }}
+                <li>{{ . }}</li>
+              {{ end }}
+            </ul>
+          </div>
+          <p class="project-role"><span>Role:</span> {{ .role }}</p>
         </article>
       {{ end }}
     </div>
@@ -86,6 +113,7 @@
       <div class="contact-links">
         <a class="text-link" href="{{ .Params.contact.github }}" rel="noopener">GitHub</a>
         <a class="text-link" href="{{ .Params.contact.x }}" rel="noopener">X (Twitter)</a>
+        <a class="text-link" href="{{ .Params.contact.instagram }}" rel="noopener">Instagram</a>
       </div>
     </div>
   </section>

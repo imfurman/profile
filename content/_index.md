@@ -1,6 +1,5 @@
 +++
 title = "Ruslan Shchur"
-+++
 
 [hero]
   name = "Ruslan Shchur"
@@ -8,13 +7,23 @@ title = "Ruslan Shchur"
   title = "Full-Stack Web Developer · Product Engineer"
   focus = "Product-oriented full-stack development for modern SaaS and web applications."
   location = "Europe / Remote"
+  [hero.cli]
+    prompt = "imfurman@studio"
+    path = "~/work/portfolio"
+    command = "ship clean, usable products"
+    output = [
+      "build: ok",
+      "perf: LCP 0.9s / seo: 100",
+      "deploy: world"
+    ]
   cta_primary = "View projects"
   cta_secondary = "Get in touch"
 
 [about]
   paragraphs = [
     "I am a full-stack web developer and software engineer who focuses on building real, usable products instead of shipping isolated features.",
-    "I work comfortably across frontend, backend, and mobile, with a steady focus on performance, clarity, and long-term maintainability."
+    "I work comfortably across frontend, backend, and mobile, with a steady focus on performance, clarity, and long-term maintainability.",
+    "Outside of work, I ride bikes and enjoy long-distance rides — slow, steady miles that clear the head and sharpen focus."
   ]
 
 [[projects]]
@@ -54,3 +63,5 @@ title = "Ruslan Shchur"
   note = "Open to remote work, collaborations, and interesting product ideas."
   github = "https://github.com/imfurman"
   x = "https://x.com/imfurman"
+  instagram = "https://www.instagram.com/imfurman"
++++
