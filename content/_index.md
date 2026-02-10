@@ -27,6 +27,20 @@ title = "Ruslan Shchur"
   ]
 
 [[projects]]
+  name = "AI Timeline"
+  type = "Open-source project"
+  url = "https://aitimeline.live"
+  description = "AI Timeline is an open-source, community-maintained visual timeline of major AI events. It tracks model releases, research breakthroughs, tools, and product launches in one place. The project is structured to stay easy to extend through GitHub pull requests."
+  why = "It gives developers and teams a clear, shared view of how fast AI is moving without fragmented sources."
+  bullets = [
+    "Visual timeline for major AI milestones",
+    "Covers models, research, tools, and launches",
+    "Community updates via GitHub pull requests",
+    "Source code: github.com/imfurman/aitimeline"
+  ]
+  role = "Creator and maintainer; full-stack development and project architecture."
+
+[[projects]]
   name = "StuffMap"
   type = "SaaS product"
   url = "https://stuffmap.com"
