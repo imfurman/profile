@@ -1,0 +1,77 @@
+{{ $maintenance := .Site.Params.maintenance }}
+{{ $title := "Work in progress" }}
+{{ $message := "I am updating this site right now. The main page will return shortly." }}
+{{ $prompt := "imfurman@deploy" }}
+{{ $path := "~/work/imfurman.com" }}
+{{ $command := "release --maintenance --safe" }}
+{{ $typing := slice
+  "boot: loading deployment profile"
+  "git pull origin main --ff-only"
+  "hugo --minify --gc"
+  "bundle: css/main.css"
+  "audit: lighthouse --preset=desktop"
+  "sync: assets -> edge nodes"
+  "healthcheck: / /robots.txt /sitemap.xml"
+  "notify: release channel updated"
+}}
+{{ $actions := slice
+  "[ok] Repo synchronized"
+  "[ok] Templates compiled"
+  "[ok] Static assets fingerprinted"
+  "[ok] HTML minification complete"
+  "[ok] Link integrity checks passed"
+  "[ok] Metadata + OpenGraph validated"
+  "[ok] CDN cache warming in progress"
+  "[ok] Edge nodes received latest build"
+  "[..] Final smoke tests running"
+  "[..] Switching traffic to new release"
+  "[ok] Deployment journal archived"
+  "[ok] Maintenance window closing"
+}}
+{{ $eta := "Thank you for your patience. Back very soon." }}
+
+{{ with $maintenance.title }}{{ $title = . }}{{ end }}
+{{ with $maintenance.message }}{{ $message = . }}{{ end }}
+{{ with $maintenance.prompt }}{{ $prompt = . }}{{ end }}
+{{ with $maintenance.path }}{{ $path = . }}{{ end }}
+{{ with $maintenance.command }}{{ $command = . }}{{ end }}
+{{ with $maintenance.typing }}{{ $typing = . }}{{ end }}
+{{ with $maintenance.actions }}{{ $actions = . }}{{ end }}
+{{ with $maintenance.eta }}{{ $eta = . }}{{ end }}
+
+<main id="main" class="maintenance">
+  <section class="section maintenance-section">
+    <div class="container">
+      <p class="eyebrow maintenance-kicker">Maintenance mode</p>
+      <h1 class="hero-title maintenance-title">{{ $title }}</h1>
+      <p class="maintenance-message">{{ $message }}</p>
+
+      <div class="terminal maintenance-terminal" role="img" aria-label="Maintenance process in terminal">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-title">deploy-session</span>
+        </div>
+        <div class="terminal-line">
+          <span class="terminal-prompt">{{ $prompt }}</span>
+          <span class="terminal-path">{{ $path }}</span>
+          <span class="terminal-caret">$</span>
+          <span class="terminal-command" style="--cmd-ch: {{ len $command }}ch;">{{ $command }}</span>
+        </div>
+        <ul class="terminal-output maintenance-typing" aria-label="Live deployment log">
+          {{ range $index, $line := $typing }}
+            <li style="--line-index: {{ $index }}; --line-ch: {{ len $line }}ch;">{{ $line }}</li>
+          {{ end }}
+        </ul>
+        <ul class="terminal-output maintenance-output">
+          {{ range $index, $line := $actions }}
+            <li style="--line-index: {{ $index }};">{{ $line }}</li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <p class="maintenance-eta">{{ $eta }}</p>
+    </div>
+  </section>
+</main>

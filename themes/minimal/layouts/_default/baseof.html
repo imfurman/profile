@@ -14,7 +14,11 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  {{ block "main" . }}{{ end }}
+  {{ if and .IsHome (.Site.Params.maintenance.enabled) }}
+    {{ partial "maintenance.html" . }}
+  {{ else }}
+    {{ block "main" . }}{{ end }}
+  {{ end }}
   {{ partial "footer.html" . }}
 </body>
 </html>

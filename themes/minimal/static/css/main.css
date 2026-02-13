@@ -194,6 +194,72 @@ a:focus {
 .terminal-output li:nth-child(2) { animation-delay: 1.6s; }
 .terminal-output li:nth-child(3) { animation-delay: 1.8s; }
 
+.maintenance {
+  min-height: calc(100vh - 4.5rem);
+  display: grid;
+  align-items: center;
+}
+
+.maintenance-section {
+  padding: clamp(1.8rem, 6vw, 4.5rem) 0;
+}
+
+.maintenance-kicker {
+  margin-bottom: 0.5rem;
+}
+
+.maintenance-title {
+  margin-bottom: 0.45rem;
+}
+
+.maintenance-message {
+  margin: 0 0 0.8rem;
+  max-width: 34rem;
+  color: var(--muted);
+}
+
+.maintenance-terminal {
+  display: block;
+  width: min(100%, 42rem);
+  padding: 0.6rem 0.65rem;
+}
+
+.maintenance-output {
+  margin-top: 0.55rem;
+}
+
+.maintenance-typing {
+  margin-top: 0.45rem;
+  color: var(--text);
+}
+
+.maintenance-typing li {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 1px solid transparent;
+  animation: maintenance-type 0.8s steps(32, end) forwards, maintenance-caret 0.65s step-end 2;
+  animation-delay: calc(1.05s + (var(--line-index, 0) * 0.75s));
+}
+
+.maintenance-typing li::before {
+  content: "> ";
+  color: var(--muted);
+}
+
+.maintenance-output li {
+  opacity: 0;
+  animation: maintenance-step 0.42s ease forwards;
+  animation-delay: calc(7s + (var(--line-index, 0) * 0.22s));
+}
+
+.maintenance-eta {
+  margin: 0.75rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 .cta {
   display: flex;
   flex-wrap: wrap;
@@ -392,6 +458,11 @@ ul {
     opacity: 1;
     animation: none;
   }
+
+  .maintenance-typing li {
+    width: auto;
+    border-right: none;
+  }
 }
 
 @media (min-width: 900px) {
@@ -414,4 +485,19 @@ ul {
 @keyframes cli-fade {
   from { opacity: 0; transform: translateY(2px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes maintenance-step {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes maintenance-type {
+  from { opacity: 1; width: 0; }
+  to { opacity: 1; width: var(--line-ch, 28ch); }
+}
+
+@keyframes maintenance-caret {
+  0%, 100% { border-right-color: transparent; }
+  50% { border-right-color: var(--text); }
 }

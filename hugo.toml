@@ -20,6 +20,39 @@ disableKinds = ["taxonomy", "term", "RSS", "section"]
   twitter = "imfurman"
   ga_id = ""
 
+[params.maintenance]
+  enabled = true
+  title = "Work in progress"
+  message = "The site is currently being updated. The main page will return shortly."
+  prompt = "imfurman@deploy"
+  path = "~/work/imfurman.com"
+  command = "release --maintenance --safe"
+  typing = [
+    "boot: loading deployment profile",
+    "git pull origin main --ff-only",
+    "hugo --minify --gc",
+    "bundle: css/main.css",
+    "audit: lighthouse --preset=desktop",
+    "sync: assets -> edge nodes",
+    "healthcheck: / /robots.txt /sitemap.xml",
+    "notify: release channel updated"
+  ]
+  actions = [
+    "[ok] Repo synchronized",
+    "[ok] Templates compiled",
+    "[ok] Static assets fingerprinted",
+    "[ok] HTML minification complete",
+    "[ok] Link integrity checks passed",
+    "[ok] Metadata + OpenGraph validated",
+    "[ok] CDN cache warming in progress",
+    "[ok] Edge nodes received latest build",
+    "[..] Final smoke tests running",
+    "[..] Switching traffic to new release",
+    "[ok] Deployment journal archived",
+    "[ok] Maintenance window closing"
+  ]
+  eta = "Thank you for your patience. Back very soon."
+
 [outputs]
   home = ["HTML", "SITEMAP"]
 

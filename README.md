@@ -27,6 +27,15 @@ Open the printed local URL and edit content in `content/_index.md`.
 1. Set your GA4 Measurement ID in `hugo.toml` under `params.ga_id`.
 2. The GA script is only injected when building with `HUGO_ENV=production` (the GitHub Action already sets this).
 
+## Maintenance mode (replace home page)
+
+Use `params.maintenance.enabled` in `hugo.toml` as a switch:
+
+- `false` - show the normal home page.
+- `true` - show the terminal-style "work in progress" page instead of the home page.
+
+You can customize text and terminal lines in the same `params.maintenance` block (`title`, `message`, `command`, `typing`, `actions`, `eta`).
+
 ## Deployment
 
 Push to `main` and GitHub Actions will build and deploy using GitHub Pages actions.
