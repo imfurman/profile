@@ -21,7 +21,7 @@ disableKinds = ["taxonomy", "term", "RSS", "section"]
   ga_id = ""
 
 [params.maintenance]
-  enabled = true
+  enabled = false
   title = "Work in progress"
   message = "The site is currently being updated. The main page will return shortly."
   prompt = "imfurman@deploy"
