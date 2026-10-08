@@ -33,6 +33,7 @@ title = "Ruslan Shchur"
 
 [contact]
   github = "https://github.com/imfurman"
+  linkedin = "https://www.linkedin.com/in/imfurman"
   x = "https://x.com/imfurman"
   instagram = "https://www.instagram.com/imfurman"
 +++

@@ -20,7 +20,12 @@
 <footer class="site-footer" id="contact">
   <span>© {{ now.Year }} · imfurman</span>
   {{ with .Site.Home.Params.contact }}
-  <nav class="contact-links" aria-label="Contact"><a href="{{ .github }}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="{{ .x }}" target="_blank" rel="noopener noreferrer">X / Twitter <span aria-hidden="true">↗</span></a><a href="{{ .instagram }}" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></nav>
+  <nav class="contact-links" aria-label="Contact">
+    <a href="{{ .github }}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    <a href="{{ .linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+    <a href="{{ .x }}" target="_blank" rel="noopener noreferrer">X / Twitter <span aria-hidden="true">↗</span></a>
+    <a href="{{ .instagram }}" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a>
+  </nav>
   {{ end }}
 </footer>
 {{ end }}
