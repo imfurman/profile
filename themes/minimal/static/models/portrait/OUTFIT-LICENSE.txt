@@ -1,0 +1,8 @@
+Ultimate Modular Men Pack — Suit character
+Author: Quaternius
+License: Creative Commons CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://quaternius.com/packs/ultimatemodularcharacters.html
+The author's source page labels this pack CC0 and permits personal and commercial use.
+Adaptation: head and prop removed; neutral animation retained; repackaged as a local GLB.
+This provenance notice was added for the portfolio; it is not the author's original license file.

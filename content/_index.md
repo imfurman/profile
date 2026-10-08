@@ -4,77 +4,34 @@ title = "Ruslan Shchur"
 [hero]
   name = "Ruslan Shchur"
   nickname = "imfurman"
-  title = "Full-Stack Web Developer · Product Engineer"
-  focus = "Product-oriented full-stack development for modern SaaS and web applications."
-  location = "Europe / Remote"
-  [hero.cli]
-    prompt = "imfurman@studio"
-    path = "~/work/portfolio"
-    command = "ship clean, usable products"
-    output = [
-      "build: ok",
-      "perf: LCP 0.9s / seo: 100",
-      "deploy: world"
-    ]
-  cta_primary = "View projects"
-  cta_secondary = "Get in touch"
-
-[about]
-  paragraphs = [
-    "I am a full-stack web developer and software engineer who focuses on building real, usable products instead of shipping isolated features.",
-    "I work comfortably across frontend, backend, and mobile, with a steady focus on performance, clarity, and long-term maintainability.",
-    "Outside of work, I ride bikes and enjoy long-distance rides — slow, steady miles that clear the head and sharpen focus."
-  ]
-
-[[projects]]
-  name = "AI Timeline"
-  type = "Open-source project"
-  url = "https://aitimeline.live"
-  description = "AI Timeline is an open-source, community-maintained visual timeline of major AI events. It tracks model releases, research breakthroughs, tools, and product launches in one place. The project is structured to stay easy to extend through GitHub pull requests."
-  why = "It gives developers and teams a clear, shared view of how fast AI is moving without fragmented sources."
-  bullets = [
-    "Visual timeline for major AI milestones",
-    "Covers models, research, tools, and launches",
-    "Community updates via GitHub pull requests",
-    "Source code: github.com/imfurman/aitimeline"
-  ]
-  role = "Creator and maintainer; full-stack development and project architecture."
-
-[[projects]]
-  name = "StuffMap"
-  type = "SaaS product"
-  url = "https://stuffmap.com"
-  description = "StuffMap is a SaaS application for organizing personal belongings by visualizing them in 3D space."
-  why = "It helps users better understand volume, space usage, and overall organization of their items."
-  bullets = [
-    "Create and manage personal inventories",
-    "Visualize items in a 3D environment",
-    "Estimate occupied volume and spatial balance",
-    "Designed for clarity and long-term organization"
-  ]
-  role = "Product design, full-stack development, and overall architecture."
-
-[skills]
-  intro = "Focused, product-driven development across web, SaaS, and mobile."
+  title = "Full-stack developer & product engineer"
+  location = "Europe · Remote"
 
 [[skills.groups]]
-  title = "Web development"
-  description = "Frontend + backend delivery with modern web frameworks, API-driven architectures, and dependable databases."
+  id = "web"
+  number = "01"
+  title = "Web\ndevelopment"
+  detail = "Frontend · Backend · APIs"
 
 [[skills.groups]]
-  title = "SaaS & product engineering"
-  description = "Product thinking, UX clarity, and systems that scale with real usage."
+  id = "product"
+  number = "02"
+  title = "Product\nengineering"
+  detail = "SaaS · UX · Architecture"
 
 [[skills.groups]]
-  title = "Mobile applications"
-  description = "Cross-platform Flutter apps aligned with web platforms and shared product logic."
+  id = "mobile"
+  number = "03"
+  title = "Mobile"
+  detail = "Flutter · Cross-platform"
 
 [[skills.groups]]
-  title = "Performance & architecture"
-  description = "Clean architecture, scalability, and cloud deployment workflows that keep products fast and maintainable."
+  id = "systems"
+  number = "04"
+  title = "Systems"
+  detail = "Performance · Scalability · Cloud"
 
 [contact]
-  note = "Open to remote work, collaborations, and interesting product ideas."
   github = "https://github.com/imfurman"
   x = "https://x.com/imfurman"
   instagram = "https://www.instagram.com/imfurman"

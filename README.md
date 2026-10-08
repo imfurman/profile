@@ -1,6 +1,6 @@
-# Minimalist Portfolio (Hugo)
+# Interactive Profile (Hugo)
 
-A clean, single-page portfolio for Ruslan Shchur (imfurman). Built with Hugo and ready for GitHub Pages.
+A minimal white profile for Ruslan Shchur (imfurman), centered on the supplied transparent illustration of Ruslan seated on a stool. Skills sit beside the character on wider screens and below it on phones; contacts stay in the footer. Built with Hugo for GitHub Pages.
 
 ## Local development
 
@@ -15,6 +15,8 @@ Open the printed local URL and edit content in `content/_index.md`.
 - Main content: `content/_index.md`
 - Global SEO defaults and site settings: `hugo.toml`
 - Styles: `themes/minimal/static/css/main.css`
+- Portrait image: `themes/minimal/static/images/ruslan-portrait.png`
+- Layout and accessibility details: [docs/interactive-portrait.md](docs/interactive-portrait.md)
 
 ## Set the custom domain
 
@@ -42,6 +44,9 @@ Push to `main` and GitHub Actions will build and deploy using GitHub Pages actio
 
 ## Notes
 
-- Single-page layout with anchored sections.
+- Single-page layout with accessible HTML skills and contacts.
+- The portrait is a regular image; it needs no JavaScript or WebGL.
+- The supplied PNG is preserved without image changes, including its transparency.
+- The earlier 3D files remain in the repository for possible reuse and are not loaded by the homepage.
 - No external themes; custom theme lives in `themes/minimal`.
 - `robots.txt` and `sitemap.xml` are generated automatically by Hugo.
