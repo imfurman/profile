@@ -12,6 +12,7 @@ Make the supplied illustration the focal point and preserve its appearance exact
 - The page no longer loads a 3D scene, pointer tracking, backflip, or animation controls.
 - Image, skills and contact links work without JavaScript and WebGL.
 - The portrait is eager-loaded at high priority; explicit dimensions reserve its aspect ratio.
+- Above 1050px, the header, portrait area and footer share a centered container capped at 1080px. Skills are positioned within that container, keeping them close to the portrait on large screens. Phone and tablet layouts are unchanged.
 
 ## Data & Files
 - `content/_index.md`: identity, skill groups, and contact URLs.

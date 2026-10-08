@@ -470,6 +470,21 @@ button:focus-visible {
   line-height: 1.8;
   margin-top: 5px;
 }
+@media (min-width: 1051px) {
+  .site-header,
+  .profile,
+  .site-footer {
+    width: min(1080px, calc(100% - 96px));
+    margin-inline: auto;
+  }
+  .site-header,
+  .site-footer {
+    padding-inline: 0;
+  }
+  .skills {
+    left: 24px;
+  }
+}
 @media (max-width: 1050px) and (min-width: 761px) {
   .skills {
     left: 36px;
