@@ -3,4 +3,4 @@
 - `google-tag.md` - Adds the Google tag (gtag.js) snippet site-wide and documents configuration.
 - `maintenance-mode.md` - Documents maintenance-mode home replacement with terminal-style status page and config switch.
 
-- `interactive-portrait.md` - Central illustrated portrait, responsive layout, accessibility, and content editing.
+- `interactive-portrait.md` - Central illustrated portrait, responsive layout, favicon assets, accessibility, and content editing.

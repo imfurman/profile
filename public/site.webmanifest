@@ -1,0 +1,10 @@
+{
+  "name": "Ruslan Shchur",
+  "short_name": "Ruslan",
+  "start_url": "./",
+  "display": "browser",
+  "icons": [
+    { "src": "icon-192.png?v=rs-1", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png?v=rs-1", "sizes": "512x512", "type": "image/png" }
+  ]
+}
